@@ -1,0 +1,46 @@
+{
+  "name": "Gestion des etudiants",
+  "short_name": "Etudiants",
+  "description": "Inscription, notes, paiements et rapports - application de gestion d'etudiants.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b1220",
+  "theme_color": "#0f172a",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "/static/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Nouvel etudiant",
+      "short_name": "Inscrire",
+      "url": "/#inscription"
+    },
+    {
+      "name": "Liste des etudiants",
+      "short_name": "Liste",
+      "url": "/#liste"
+    }
+  ]
+}
