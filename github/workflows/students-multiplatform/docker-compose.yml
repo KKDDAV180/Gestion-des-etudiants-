@@ -1,0 +1,29 @@
+services:
+  app:
+    build: .
+    image: student-management-flask:4.0
+    container_name: students-app
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      # Obligatoire : definissez STUDENT_API_KEY dans un fichier .env
+      STUDENT_API_KEY: ${STUDENT_API_KEY:?Definissez STUDENT_API_KEY dans .env}
+      # Signature du cookie de session (mode demo). Generez-la une fois.
+      SECRET_KEY: ${SECRET_KEY:-change-me-in-production}
+      # 1 = interface web sans saisie de cle (demonstration uniquement)
+      STUDENT_DEMO_MODE: ${STUDENT_DEMO_MODE:-0}
+      DATABASE_PATH: /data/students.db
+      FLASK_DEBUG: "0"
+    volumes:
+      # La base SQLite survit aux redemarrages et aux reconstructions.
+      - students-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:5000/health', timeout=3).status == 200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  students-data:
