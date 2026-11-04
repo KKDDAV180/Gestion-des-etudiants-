@@ -1,0 +1,38 @@
+# Donnees locales et artefacts
+students.db
+students.db-wal
+students.db-shm
+*.db
+*.sqlite
+*.sqlite3
+
+# Tests et caches
+tests/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Outils / editeurs
+.git/
+.gitignore
+.vscode/
+.idea/
+*.swp
+
+# Documentation et archives
+README.md
+*.md
+*.zip
+screenshots/
+
+# Divers
+.DS_Store
+.env
+.env.*

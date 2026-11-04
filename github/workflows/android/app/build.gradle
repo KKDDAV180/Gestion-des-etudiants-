@@ -1,0 +1,28 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.gestion.etudiants'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.gestion.etudiants'
+        minSdk 24            // Android 7.0 et plus
+        targetSdk 34
+        versionCode 5
+        versionName '5.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            // Signature de debug : l'APK s'installe directement (sources inconnues autorisees).
+            signingConfig signingConfigs.debug
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
